@@ -86,8 +86,8 @@
 		});
 	}
 
-	/* 
-	// Stop on mouse over ! 
+	/*
+	// Stop on mouse over !
 	jQuery('#slides').on('mouseenter', function() {
 		jQuery(this).superslides('stop');
 		// console.log('Stopped')
@@ -100,7 +100,7 @@
 
 // });
 
-	
+
 
 /**	03. FITVIDS
 *************************************************** **/
@@ -109,7 +109,7 @@
 	}
 
 
-	
+
 
 /**	04. CAROUSEL
 	@OWL USAGE
@@ -165,7 +165,7 @@
 			next: '#service-next',
 			responsive: true,
 			width: '100%',
-			height: 'variable', 
+			height: 'variable',
 			scroll: 1,
 			items: {
 				width: 292,
@@ -188,33 +188,33 @@
 	jQuery('.animate_from_top').each(function () {
 		jQuery(this).appear(function() {
 			jQuery(this).delay(150).animate({opacity:1,top:"0px"},1000);
-		});	
+		});
 	});
 
 	jQuery('.animate_from_bottom').each(function () {
 		jQuery(this).appear(function() {
 			jQuery(this).delay(150).animate({opacity:1,bottom:"0px"},1000);
-		});	
+		});
 	});
 
 
 	jQuery('.animate_from_left').each(function () {
 		jQuery(this).appear(function() {
 			jQuery(this).delay(150).animate({opacity:1,left:"0px"},1000);
-		});	
+		});
 	});
 
 
 	jQuery('.animate_from_right').each(function () {
 		jQuery(this).appear(function() {
 			jQuery(this).delay(150).animate({opacity:1,right:"0px"},1000);
-		});	
+		});
 	});
 
 	jQuery('.animate_fade_in').each(function () {
 		jQuery(this).appear(function() {
 			jQuery(this).delay(150).animate({opacity:1,right:"0px"},1000);
-		});	
+		});
 	});
 
 	/**	@ANIMATE ELEMENTS **/
@@ -340,7 +340,7 @@
 				} else {
 
 					// PHPMAILER ERROR
-					alert(data); 
+					alert(data);
 
 				}
 			}
@@ -398,7 +398,7 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 				} else {
 
 					// PHPMAILER ERROR
-					alert(data); 
+					alert(data);
 
 				}
 			}
@@ -553,7 +553,7 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 
 	}
 
-	
+
 	function showMap(initWhat) {
 		var script 		= document.createElement('script');
 		script.type 	= 'text/javascript';
@@ -561,7 +561,7 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 		document.body.appendChild(script);
 	}
 
-	
+
 	// INIT CONTACT, NLY IF #contactMap EXISRS
 	if(jQuery("#gmap").length > 0) {
 		showMap('contactMap');
@@ -575,7 +575,7 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 	function _popups() {
 		if(jQuery().magnificPopup) {
 
-			jQuery('.popup, .popup-image').magnificPopup({ 
+			jQuery('.popup, .popup-image').magnificPopup({
 				type: 'image',
 				fixedContentPos: 	false,
 				fixedBgPos: 		false,
@@ -732,7 +732,9 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 		}
 	// -----------------------------------------------------------------------------------
 
-if(jQuery("#home").length > 0) {
+// Here the top bar effect on the home page
+// false to disable it
+if( false && jQuery("#home").length > 0) {
 
 	window.isOnTop 		= true;
 	window.homeHeight 	= jQuery("#home").height() - window.navHeight;
@@ -768,8 +770,8 @@ if(jQuery("#home").length > 0) {
  *************************************************** **/
 	if(navigator.userAgent.indexOf("MSIE") > 0) {
 		/* ie */
-	} else { 
-		jQuery("a.btn-fullscreen").show(); 
+	} else {
+		jQuery("a.btn-fullscreen").show();
 	}
 
 	jQuery("a.btn-fullscreen").bind("click", function(e) {
@@ -843,7 +845,7 @@ if(jQuery("#home").length > 0) {
 *************************************************** **/
 	// hide body scroll if modal is open
 	jQuery("#contactModal").mouseenter(function(){
-		jQuery("html, body").css("overflow", "hidden"); 
+		jQuery("html, body").css("overflow", "hidden");
 	}).mouseleave(function(){
 		jQuery("html, body").css("overflow", "visible");
 	});

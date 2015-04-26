@@ -25,10 +25,23 @@
  html, body {
   overflow-x:hidden;
   overflow-x:hidden;
+  /* height: 100%; */
 }
+
 .container {
   position:relative;
 }
+
+a:hover,
+a:focus {
+    color: #000
+}
+
+.label[href]:hover,
+.label[href]:focus {
+    color: #000
+}
+
 .label {
   display:inline-block;
   margin:6px 1px 0 0;
@@ -37,9 +50,22 @@
   border-radius:0;
 }
 .label.light {
-  color:#888;
-  background-color:#eee;
+    color:#888;
+    background: none;
+    /* background-color:#eee; */
 }
+a.label.light, a.label.light:focus {
+    border: 1px rgba(0,0,0,0) solid;
+    background: none;
+}
+
+a.label.light:hover {
+    color:#888;
+    background: none;
+    border: 1px #000 solid;
+    /* background-color:#eee; */
+}
+
 div.divider {
   height: 4px;
   width: 220px;
@@ -54,28 +80,28 @@ div.divider {
   font-size:25px;
   line-height:35px;
 }
+
 .plusNav {
-  width: 36px;
-  height: 36px;
   display: inline-block;
-  border: 6px double #fff;
-  background:#ccc;
+  border: 1px rgba(0,0,0,0) solid;
+  color: #555;
+  background:none;
   text-align:center;
+  font-weight: 600;
   line-height:23px;
-  font-size:30px;
-  color:#fff;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
+  font-size:20px;
   -webkit-transition: all 300ms !important;
   -moz-transition: all 300ms !important;
   -o-transition: all 300ms !important;
   transition: all 300ms !important;
+  padding: 7px;
 }
+
 .plusNav:hover {
-  border:6px solid #fff;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #ccc, 0 0 0 10px rgba(255, 255, 255, 0.5);
-  opacity:0.7;
+  border: 1px rgba(0,0,0,1) solid;
+  color: #000;
 }
+
 section header h1, section header h2, section header h3 {
   color:#0F1113;
 }
@@ -85,9 +111,9 @@ section {
 section.arrow-down {
   background:#ffffff url('../images/down_white.png') no-repeat top center
 }
-section.alternate {
-  background:#F6F6F6;
-}
+/* section.alternate { */
+/*   background:#F6F6F6; */
+/* } */
 section.alternate.arrow-down {
   background:#F6F6F6 url('../img/down_alternate.png') no-repeat top center
 }
@@ -99,24 +125,87 @@ section.alternate.arrow-down {
 .btn:hover {
   border:rgba(0, 0, 0, 0.5) 2px solid !important;
 }
+
+.me-picture {
+    position:relative;
+    display:block;
+    margin-bottom:60px;
+}
+
+.me-picture .item {
+    border:#fff 20px solid;
+    display:inline-block;
+    position:relative;
+    z-index:1;
+    overflow:hidden;
+}
+.me-picture img {
+    border:#969696 1px solid;
+    /* border:#F6F6F6 10px solid; */
+    width:150px;
+    height:150px;
+    -moz-border-radius:50%;
+    border-radius:50%;
+}
+.me-picture hr {
+    margin:0 !important;
+    position:absolute;
+    top:50%;
+    width:100%;
+    z-index:0;
+}
+
 /** 02. Nav Bar
  **************************************************************** **/
- #header {
-  margin:0;
-  padding:0;
-  position:relative;
-  height:60px;
-  margin-top:-60px;
-  left:0;
-  right:0;
-  top:0;
-  color:#fff;
-  z-index:99;
+ /* #header { */
+ /*  margin:0; */
+ /*  padding:0; */
+ /*  position:relative; */
+ /*  height:60px; */
+ /*  margin-top:-60px; */
+ /*  left:0; */
+ /*  right:0; */
+ /*  top:0; */
+ /*  color:#fff; */
+ /*  z-index:99; */
+ /* } */
+#header {
+    margin:0;
+    padding:0;
+    position:relative;
+    height:60px;
+    margin-top:-60px;
+    left:0;
+    right:0;
+    top:0;
+    color: #777;
+    z-index:99;
+    font-size: 15px;
 }
+
+#header.fixed {
+    position:fixed;
+    margin-top:0 !important;
+    left:0;
+    right:0;
+    top:0;
+}
+
 #header .navbar {
   margin:0;
   padding:0;
 }
+
+#header .navbar a {
+  color: #777;
+}
+
+/* override bootstrap */
+#header .nav>li>a:hover, .nav>li>a:focus {
+                             color: #000;
+                             background-color: white;
+                         }
+
 #header a.navbar-brand {
   padding:0;
   color:#fff;
@@ -151,13 +240,13 @@ section.alternate.arrow-down {
   padding-bottom:20px;
 }
 #header .navbar-inverse ul.nav li.active a, #header .navbar-inverse ul.nav a:hover {
-  color:#ABA798;
+  color:#000;
 }
 #header .navbar-collapse {
   padding:0;
 }
 #mobileMenu {
-  color:#fff;
+  /* color:#fff; */
   display:none;
 }
 /* white */
@@ -245,6 +334,16 @@ section.alternate.arrow-down {
   background:rgba(0, 0, 0, 0.3);
   z-index:0;
 }
+#home-social a.social, #home-social a.social.fa-linkedin {
+    background: none;
+    color: #000;
+    border: rgba(0,0,0,0) 1px solid;
+}
+#home-social a.social:hover {
+    background: none;
+    border: rgba(0,0,0,1) 1px solid;
+}
+
 /* custom */
  #home.full-screen, #home.half-screen {
   background:#F0F0F0 url('../img/loading.gif') no-repeat center;
@@ -252,8 +351,8 @@ section.alternate.arrow-down {
 /** 04. Content
  **************************************************************** **/
 
-/* 
-	Isotope CSS3 transitions 
+/*
+	Isotope CSS3 transitions
 */
  .isotope, .isotope .isotope-item {
   -webkit-transition-duration: 0.8s;
@@ -278,32 +377,35 @@ section.alternate.arrow-down {
 }
 /** 06. About Me
  **************************************************************** **/
- #about .me-picture {
-  position:relative;
-  display:block;
-  margin-bottom:60px;
-}
-#about .me-picture .item {
-  border:#fff 20px solid;
-  display:inline-block;
-  position:relative;
-  z-index:1;
-  overflow:hidden;
-}
-#about .me-picture img {
-  border:#F6F6F6 10px solid;
-  width:240px;
-  height:240px;
-  -moz-border-radius:50%;
-  border-radius:50%;
-}
-#about .me-picture hr {
-  margin:0 !important;
-  position:absolute;
-  top:50%;
-  width:100%;
-  z-index:0;
-}
+/* moved to global because used in home and about me*/
+
+/*  #about .me-picture { */
+/*   position:relative; */
+/*   display:block; */
+/*   margin-bottom:60px; */
+/* } */
+/* #about .me-picture .item { */
+/*   border:#fff 20px solid; */
+/*   display:inline-block; */
+/*   position:relative; */
+/*   z-index:1; */
+/*   overflow:hidden; */
+/* } */
+/* #about .me-picture img { */
+/*   border:#F6F6F6 10px solid; */
+/*   width:240px; */
+/*   height:240px; */
+/*   -moz-border-radius:50%; */
+/*   border-radius:50%; */
+/* } */
+/* #about .me-picture hr { */
+/*   margin:0 !important; */
+/*   position:absolute; */
+/*   top:50%; */
+/*   width:100%; */
+/*   z-index:0; */
+/* } */
+
 /** 11. Footer
  **************************************************************** **/
  footer {
@@ -311,7 +413,12 @@ section.alternate.arrow-down {
   font-size:13px;
   background:#0F1113;
   position:relative;
-}
+ }
+
+footer a:hover, a:focus {
+                    color: #fff
+                }
+
 footer .copyright {
   padding-top:10px;
 }

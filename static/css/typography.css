@@ -9,7 +9,7 @@
 		02. Spacing
 		03. Responsive
 	---------------------------
-	
+
  ** ************************************* **/
 
 /** 01. Typography
@@ -77,7 +77,7 @@ blockquote p {
   border:0;
   border-bottom:#fff 1px solid;
   border-top:#ddd 1px solid;
-  margin-bottom:60px;
+  /* margin-bottom:60px; */
 }
 /* ---------- SECTION ---------- */
  footer, section {
@@ -112,7 +112,7 @@ header p {
   padding:0;
 }
 section {
-  padding:110px 0;
+  padding:50px 0;
 }
 section header p {
   margin:0;

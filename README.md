@@ -24,10 +24,11 @@ the following part is my config file:
 from __future__ import unicode_literals
 
 AUTHOR = u'Ken Lai'
-SITENAME = u'Network Tsukkomi'
+SITENAME = u'Cedric Pinson
+TAGLINE = u'Bim
 SITEURL = ''
 
-TIMEZONE = 'Asia/Hong_Kong'
+TIMEZONE = 'Europe/Paris
 
 DEFAULT_LANG = u'en'
 
@@ -45,9 +46,6 @@ FEED_ALL_ATOM = False
 TRANSLATION_FEED_RSS = False
 TRANSLATION_FEED_ATOM = False
 
-# Blogroll
-LINKS = (('Ken M. Lai\'s Note', 'http://kenmlai.blogspot.com'),
-         ('Martian Z', 'http://blog.martianz.cn/'))
 
 # Social widget
 SOCIAL = (('google-plus', 'https://plus.google.com/+KenLaimercus'),
@@ -57,11 +55,11 @@ SOCIAL = (('google-plus', 'https://plus.google.com/+KenLaimercus'),
           )
 
 
-DEFAULT_PAGINATION = True
-PAGINATED_DIRECT_TEMPLATES = ('blog-index',)
-DIRECT_TEMPLATES = ('categories', 'index', 'blog-index', 'blog')
+DEFAULT_PAGINATION = False
+PAGINATED_DIRECT_TEMPLATES = (,)
+DIRECT_TEMPLATES = ('index','blog')
 
-POST_LIMIT = 3
+POST_LIMIT = 30
 
 # PAGINATION = False
 
@@ -91,7 +89,6 @@ THEME = "/Users/KenMercusLai/Documents/Projects/BT3-Flat"
 SWIFTYPE = ''
 SITE_THUMBNAIL = 'https://dl.dropboxusercontent.com/u/299446/logo.png'
 SITE_THUMBNAIL_TEXT = 'Network Tsukkomi'
-SITESUBTITLE = 'Not only about network'
 
 DISQUS_SITENAME = 'networktsukkomime'
 GOOGLE_ANALYTICS = ''

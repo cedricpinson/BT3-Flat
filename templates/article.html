@@ -10,16 +10,8 @@
       <h1>{{ article.title }}</h1>
     {% endif %}
     <small class="fsize13">
-      {% if article.category %}
-        {% for category, articles in categories %}
-          {% if category.url == article.category.url %}
-            {% set article_counter = articles|length() %}
-            <a href="{{ SITEURL }}/{{ article.category.url }}" rel="tag tooltip" class="label label-default light" data-placement="right" data-original-title="{{ article_counter }} article{{ 's' if article_counter > 1 else '' }} in this category"><i class="fa fa-dot-circle-o"></i> {{ article.category }}</a>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+      <span class="label label-default light">{{ article.locale_date }}</span>
       <a href="{{ SITEURL }}/{{article.url}}#disqus_thread" class="scrollTo label label-default light" data-disqus-identifier="{{article.url}}"><i class="fa fa-comment-o"></i> ?? Comments</a>
-      <span class="label label-default light">{{ article.locale_date }}</span> 
     </small>
   </header>
 
@@ -32,7 +24,7 @@
       {% elif article.type|lower =='video' %}
         <iframe class="fitvids" src="{{article.featured}}" width="800" height="450"></iframe>
       {% elif article.type|lower =='audio'%}
-        <iframe class="fullwidth" height="166" src="{{article.featured}}"></iframe> 
+        <iframe class="fullwidth" height="166" src="{{article.featured}}"></iframe>
       {% endif %}
     {% endif %}
     {{ article.content }}
@@ -46,31 +38,32 @@
         <li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
       {% endfor %}
       </ul>
-  {% endif %}
-  <div class="divider"><!-- lines divider --></div>
+    {% endif %}
+
+  <!-- <div class="divider"><\!-- lines divider -\-></div> -->
 
   <!-- SOCIAL -->
   {% include "_includes/share_post.html" %}
-  
+
 
   <!-- TAGS -->
-  <p class="fsize16"> Tags:
-    {% if article.tags %}
-      {% set article_tags = [] %}
-      {% for tag, articles in tags %}
-        {% for t in article.tags %}
-          {% if tag.url == t.url %}
-            {% if article_tags.append({'name': tag.name, 'url': tag.url, 'articles': articles|length()}) %}{% endif %}
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
-      {% for tag in article_tags|sort(reverse = True, attribute = 'articles') %}
-        {{ m.render_tag(tag) }}
-      {% endfor %}
-    {% endif %}
-  </p>
+  <!-- <p class="fsize16"> Tags: -->
+  <!--   {% if article.tags %} -->
+  <!--     {% set article_tags = [] %} -->
+  <!--     {% for tag, articles in tags %} -->
+  <!--       {% for t in article.tags %} -->
+  <!--         {% if tag.url == t.url %} -->
+  <!--           {% if article_tags.append({'name': tag.name, 'url': tag.url, 'articles': articles|length()}) %}{% endif %} -->
+  <!--         {% endif %} -->
+  <!--       {% endfor %} -->
+  <!--     {% endfor %} -->
+  <!--     {% for tag in article_tags|sort(reverse = True, attribute = 'articles') %} -->
+  <!--       {{ m.render_tag(tag) }} -->
+  <!--     {% endfor %} -->
+  <!--   {% endif %} -->
+  <!-- </p> -->
 
-  <hr /><!-- divider -->
+  <!-- <hr /><\!-- divider -\-> -->
 
   {% if SITEURL and DISQUS_SITENAME %}
     <div id="comments" class="comments">
@@ -90,10 +83,3 @@
     </div>
   {% endif %}
 {%endblock%}
-
-
-
-
-
-
-

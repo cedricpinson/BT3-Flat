@@ -61,24 +61,35 @@
 #blog .btn {
   margin:0;
 }
-#quick-blog .quick-item .btn, #blog .item .btn, #blog .item .btn:hover {
-  border:#ccc 1px solid !important;
+
+#quick-blog .quick-item .btn,
+#blog .item .btn {
+    border: rgba(0,0,0,0) 1px solid;
 }
+
+#blog .item .btn:hover,
+#quick-blog .quick-item .btn:hover {
+  border:#aaa 1px solid !important;
+}
+
 /* onepage home */
  #quick-blog div.quick-hover {
   -webkit-transition: all 300ms !important;
   -moz-transition: all 300ms !important;
   -o-transition: all 300ms !important;
   transition: all 300ms !important;
-}
+ }
+
 #quick-blog .quick-item {
   background:#fff;
   padding:20px;
   margin:15px 0;
 }
-#quick-blog .quick-item:hover {
-  box-shadow:#eee 0 0 15px;
-}
+
+/* #quick-blog .quick-item:hover { */
+/*   box-shadow:#aaa 0 0 1px; */
+/* } */
+
 #quick-blog .media-preview {
   display:block;
   margin:-20px -20px 20px -20px;
@@ -116,21 +127,41 @@
 
 /** This is the color that article linkes show up as **/
 .styleColor, ul.bstrap-tabs li.active a, ul.bstrap-tabs li.active a i, #portfolio div.item a:hover i.fa, section.util-row h1, .pagination>li>a, .pagination>li>span, .pagination>li>a:hover, a {
-  color:#1000FF;
+    color:#000;
+}
+
+/* .quick-item p a, article.content p a, item p a { */
+/*     text-decoration: underline; */
+/* } */
+
+/* #blog article.content p a, */
+/* #blog article.content p a:hover, */
+#blog article p a,
+#blog article p a:hover,
+#quick-blog p a,
+#quick-blog p a:hover
+{
+    text-decoration: underline;
+}
+
+#blog p.socials a,
+#blog p.socials a:hover {
+    text-decoration: initial;
 }
 
 /** This is the color that theme linkes show up as **/
 .theme_link {
-  color:#7E8344;
+    color:#555;
 }
 
-a:hover {
-  color:#999e52;
+.theme_link:hover {
+    color: #000;
 }
-.plusNav {
-  background:#7E8344;
-}
-.plusNav:hover {
-  color:#fff;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #1000FF, 0 0 0 10px rgba(255, 255, 255, 0.5);
-}
+
+/* .plusnav { */
+/*   background:#7E8344; */
+/* } */
+/* .plusNav:hover { */
+/*   color:#fff; */
+/*   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #1000FF, 0 0 0 10px rgba(255, 255, 255, 0.5); */
+/* } */

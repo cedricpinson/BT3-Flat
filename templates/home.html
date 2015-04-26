@@ -1,0 +1,101 @@
+<head>
+    {% include "_includes/header.html" %}
+</head>
+
+<body>
+    <!-- Main Nav -->
+        {% include "_includes/nav.html" %}
+    <!-- /Main Nav -->
+
+
+    <!-- HOME -->
+    <section id="home"><!-- full-screen or half-screen (550px height) -->
+
+      <div class="container">
+
+        {% if PERSONAL_PHOTO %}
+        <div class="me-picture text-center">
+          <div class="item">
+            <img class="img-responsive" src="{{PERSONAL_PHOTO}}" width="200" height="200" alt="" />
+          </div>
+        </div>
+        {% endif %}
+
+
+        <header class="text-center">
+          <h1>{{SITENAME}}</h1>
+        </header>
+
+        <header class="text-center">
+        {% if TAGLINE %}
+        <div class="text-center">
+          <div class="item">
+            {{TAGLINE}}
+          </div>
+        </div>
+        {% endif %}
+        </header>
+
+        <div class="text-center" id="home-social">
+            {% for group_title, group_link in SOCIAL %}
+              <a href="{{group_link}}" class="social fa fa-{{group_title|lower}}"></a>
+            {% endfor %}
+        </div>
+
+      </div>
+
+    </section>
+    <!-- /HOME -->
+
+
+    <!-- BLOG -->
+    <section id="quick-blog">
+    <div class="container">
+
+
+        <article>
+        <div class="row animate_fade_in">
+
+          {% for article in articles[:5] %}
+
+          <hr/>
+
+            <div class="quick-hover">
+                <div class="quick-item">
+                {% if article.featured %}
+                <figure class="media-preview">
+                {% if article.type|lower=='image' %}
+                    <img src="{{article.featured}}" class="img-responsive" data-src="holder.js/360x200/#676767:#555555/auto/" alt="img" />
+                {%elif article.type|lower=='video'%}
+                    <iframe class="fitvids" src="{{article.featured}}" width="800" height="450"></iframe>
+                {%elif article.type|lower=='audio'%}
+                    <iframe class="fullwidth" height="166" src="{{article.featured}}"></iframe>
+                {% endif %}
+                </figure>
+                {% endif %}
+                {% if article.link %}
+                    <h4><a class="theme_link" href="{{ article.link }}">{{article.title}} <i class="fa fa-external-link" target="_blank"></i></a></h4>
+                {%else%}
+                    <h4><a class="theme_link" href="{{ SITEURL }}/{{ article.url }}">{{article.title}}</a></h4>
+                {%endif%}
+                <p>{{article.summary}}</p>
+                <a href="{{ SITEURL }}/{{ article.url }}" class="btn btn-xs theme_link">READ MORE</a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        </article>
+
+        <div class="divider"><!-- lines divider --></div>
+
+        <header class="text-center">
+          <a href="blog.html" class="plusNav" title="more from blog">more</a>
+        </header>
+
+    </div>
+    </section>
+    <!-- /BLOG -->
+
+    {% include "_includes/footer.html" %}
+</body>
